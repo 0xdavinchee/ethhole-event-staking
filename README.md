@@ -74,8 +74,11 @@ Connect to the hardhat console at localhost with `npx hardhat console --network 
 const contract = await (await ethers.getContractFactory("<CONTRACT_NAME>")).attach("<ADDRESS>");
 ```
 
-This will allow you to have access to the functions of the contract. You can get multiple accounts to interact with the contract using
-`const accounts = await hre.getUnnamedAccounts()`.
+This will give you access to the functions of the contract. You can get multiple accounts to interact with the contract using
+
+```
+const accounts = await hre.getUnnamedAccounts()
+```
 
 <!-- LICENSE -->
 
