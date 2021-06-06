@@ -61,15 +61,21 @@ To get a local copy up and running follow these simple steps.
 ## Usage
 
 To compile: `npx hardhat compile`.
+
 To run tests: `npx hardhat test`.
-To run the project locally, open up a terminal window and run `npx hardhat node` to start up a local node. Open up another terminal window and run `npx hardhat deploy --network localhost` to deploy your project to localhost. Then connect to the hardhat console at localhost with `npx hardhat console --network localhost` and create an instance of the contract and attach it to the address it was deployed to:
+
+Run `npx hardhat node` to start up a local node.
+
+Open up another terminal window and run `npx hardhat deploy --network localhost` to deploy your project to localhost.
+
+Connect to the hardhat console at localhost with `npx hardhat console --network localhost` and create an instance of the contract and attach it to the address it was deployed to:
 
 ```
 const contract = await (await ethers.getContractFactory("<CONTRACT_NAME>")).attach("<ADDRESS>");
-
 ```
 
-This will allow you to have access to the functions of the contract. You can get multiple accounts to interact with the contract using `const accounts = await hre.getUnnamedAccounts()`.
+This will allow you to have access to the functions of the contract. You can get multiple accounts to interact with the contract using
+`const accounts = await hre.getUnnamedAccounts()`.
 
 <!-- LICENSE -->
 
