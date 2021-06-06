@@ -22,3 +22,10 @@ export async function setupUser<T extends { [contractName: string]: Contract }>(
   }
   return user as { address: string } & T;
 }
+
+export const getDate = () => {
+  let date = new Date();
+  date.setDate(date.getDate() + 1);
+  let formattedDate = Math.round(date.getTime() / 1000);
+  return formattedDate;
+};

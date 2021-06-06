@@ -1,17 +1,19 @@
 import { HardhatRuntimeEnvironment } from "hardhat/types";
-import {DeployFunction } from "hardhat-deploy/types";
+import { DeployFunction } from "hardhat-deploy/types";
+import { ethers } from "hardhat";
+import { getDate } from "../test/utils";
 
 const func: DeployFunction = async (hre: HardhatRuntimeEnvironment) => {
   const { deployments, getNamedAccounts } = hre;
   const { deployer } = await getNamedAccounts();
   const { deploy } = deployments;
 
-  await deploy("Greeter", {
+  await deploy("EventStaking", {
     from: deployer,
-    args: ["Hello Hardhat!"],
-    log: true
+    args: [getDate(), ethers.utils.parseEther("0.01")],
+    log: true,
   });
-}
+};
 
 export default func;
-func.tags = ["Greeter"];
+func.tags = ["EventStaking"];
