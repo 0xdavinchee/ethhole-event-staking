@@ -20,10 +20,10 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
+    <li><a href="#usage">Usage</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
@@ -45,12 +45,6 @@
 
 To get a local copy up and running follow these simple steps.
 
-### Prerequisites
-
-```sh
-npm install
-```
-
 ### Installation
 
 1. Clone the repo
@@ -62,6 +56,21 @@ npm install
    npm install
    ```
 
+<!-- USAGE EXAMPLES -->
+
+## Usage
+
+To compile: `npx hardhat compile`.
+To run tests: `npx hardhat test`.
+To run the project locally, open up a terminal window and run `npx hardhat node` to start up a local node. Open up another terminal window and run `npx hardhat deploy --network localhost` to deploy your project to localhost. Then connect to the hardhat console at localhost with `npx hardhat console --network localhost` and create an instance of the contract and attach it to the address it was deployed to:
+
+```
+const contract = await (await ethers.getContractFactory("<CONTRACT_NAME>")).attach("<ADDRESS>");
+
+```
+
+This will allow you to have access to the functions of the contract. You can get multiple accounts to interact with the contract using `const accounts = await hre.getUnnamedAccounts()`.
+
 <!-- LICENSE -->
 
 ## License
@@ -72,6 +81,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-- [@0xdavinchee](https://twitter.com/@0xdavinchee) - 0xdavinchee@gmail.com
+[@0xdavinchee](https://twitter.com/@0xdavinchee) - 0xdavinchee@gmail.com
 
 Project Link: [https://github.com/0xdavinchee/ethhole-event-staking](https://github.com/0xdavinchee/ethhole-event-staking)
